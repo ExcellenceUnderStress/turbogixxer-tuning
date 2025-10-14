@@ -5,20 +5,20 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-16">
+      <section className="bg-gradient-to-r from-gray-900 to-gray-800 py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4">About Us</h1>
-          <p className="text-xl text-gray-300 max-w-3xl">
+          <h1 className="text-5xl font-bold mb-4 text-[#F5FEFF]">About Us</h1>
+          <p className="text-xl text-[#F5FEFF] max-w-3xl">
             Your premier destination for high-performance automotive tuning solutions since 2013
           </p>
         </div>
       </section>
 
       {/* Introduction */}
-      <section className="py-16">
+      <section className="py-16 bg-[#FCFCFD]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            <p className="text-lg text-[#121926] leading-relaxed mb-6">
               Welcome to <strong>Turbogixxer Tuning</strong>, your premier destination for high-performance 
               automotive tuning solutions. Founded in 2013, we&apos;ve built a reputation as leaders in ECU 
               modifications, engine management systems, and custom tuning services for enthusiasts and 
@@ -31,11 +31,11 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#FCFCFD]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6 text-blue-600">Our Story</h2>
-            <p className="text-lg text-gray-700 leading-relaxed">
+            <p className="text-lg text-[#121926] leading-relaxed">
               Turbogixxer Tuning started as a passion project in a small garage, driven by a love for 
               turbocharged performance and precision engineering. Over the years, we&apos;ve grown into a 
               trusted name in the tuning community, serving thousands of customers across the globe. From 
@@ -47,11 +47,11 @@ export default function AboutPage() {
       </section>
 
       {/* Our Mission */}
-      <section className="py-16">
+      <section className="py-16 bg-[#FCFCFD]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6 text-blue-600">Our Mission</h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            <p className="text-lg text-[#121926] leading-relaxed mb-6">
               At Turbogixxer, our mission is simple: to deliver top-tier tuning products and services that 
               transform your vehicle into a high-performance machine. We believe in quality over quantity, 
               which is why we only partner with industry-leading brands like AEM, Turbosmart, HP Tuners, 
@@ -94,11 +94,11 @@ export default function AboutPage() {
       </section>
 
       {/* Meet the Team */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#FCFCFD]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6 text-blue-600">Meet the Team</h2>
-            <p className="text-lg text-gray-700 leading-relaxed mb-8">
+            <p className="text-lg text-[#121926] leading-relaxed mb-8">
               Our team consists of certified tuners, engineers, and automotive enthusiasts with decades 
               of combined experience:
             </p>
@@ -128,7 +128,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <p className="text-lg text-gray-700 leading-relaxed mt-8 italic">
+            <p className="text-lg text-[#121926] leading-relaxed mt-8 italic">
               We&apos;re more than just a shop—we&apos;re a community of gearheads who live and breathe 
               performance tuning.
             </p>
@@ -137,7 +137,7 @@ export default function AboutPage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-16">
+      <section className="py-16 bg-[#FCFCFD]">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-6 text-blue-600">Why Choose Us?</h2>
@@ -177,22 +177,22 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-blue-600 text-white">
+      <section className="py-16 bg-[#117b97]">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Elevate Your Ride?</h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold mb-4 text-[#F5FEFF]">Ready to Elevate Your Ride?</h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto text-[#F5FEFF]">
             Explore our store for the best in tuning solutions or get in touch with our team today
           </p>
           <div className="flex gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition"
+              className="bg-white text-[#121926] hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition"
             >
               Contact Us
             </Link>
             <Link
               href="/"
-              className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-lg font-semibold transition"
+              className="bg-transparent border-2 border-white hover:bg-white hover:text-[#121926] px-8 py-3 rounded-lg font-semibold transition text-[#F5FEFF]"
             >
               Explore Store
             </Link>
@@ -201,7 +201,7 @@ export default function AboutPage() {
       </section>
 
       {/* Footer Note */}
-      <section className="py-8 bg-gray-50">
+      <section className="py-8 bg-[#FCFCFD]">
         <div className="container mx-auto px-4 text-center text-sm text-black">
           <p>Site designed by MindFusion FX</p>
           <p className="mt-2">Copyright © 2013-2025 Turbogixxer Tuning. All rights reserved.</p>
