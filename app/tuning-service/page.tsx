@@ -185,7 +185,7 @@ export default function TuningServicePage() {
       {/* CTA Section */}
       <section className="py-16 bg-red-600 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Unlock Your Engine's Potential?</h2>
+          <h2 className="text-3xl font-bold mb-4">Ready to Unlock Your Engine&apos;s Potential?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
             Contact us today to discuss your tuning needs and get started on your performance journey.
           </p>
