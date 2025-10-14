@@ -202,7 +202,7 @@ export default function AboutPage() {
 
       {/* Footer Note */}
       <section className="py-8 bg-gray-50">
-        <div className="container mx-auto px-4 text-center text-sm text-gray-600">
+        <div className="container mx-auto px-4 text-center text-sm text-black">
           <p>Site designed by MindFusion FX</p>
           <p className="mt-2">Copyright © 2013-2025 Turbogixxer Tuning. All rights reserved.</p>
         </div>
