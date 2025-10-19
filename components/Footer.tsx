@@ -11,7 +11,6 @@ export default function Footer() {
             alt="Turbogixxer Tuning Logo" 
             className="h-12 w-auto"
           />
-          <span className="text-2xl font-bold">Turbogixxer Tuning</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

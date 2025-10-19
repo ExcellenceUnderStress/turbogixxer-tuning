@@ -60,8 +60,7 @@ export default function Home() {
               Expert ECU Tuning for Peak Performance
             </h1>
             <p className="text-xl mb-8 text-white">
-              Professional tuning services and premium performance parts for Honda, Acura, and more. 
-              Specializing in Hondata, Haltech, and Ktuner solutions.
+              Professional ECU setup and calibration across Hondata, Haltech, KTuner, and Motec platforms for dependable, measurable results.
             </p>
             <div className="flex gap-4">
               <Link
