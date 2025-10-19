@@ -131,58 +131,62 @@ export default function Navigation() {
         <div className="md:hidden py-4">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="w-full text-left font-medium"
+            className="w-full text-left font-semibold text-gray-900 text-lg flex items-center justify-between"
           >
             Menu
+            <ChevronDown
+              size={20}
+              className={`transform transition ${mobileMenuOpen ? 'rotate-180' : ''}`}
+            />
           </button>
 
           {mobileMenuOpen && (
-            <div className="mt-4 space-y-2">
+            <div className="mt-4 space-y-3 pb-4">
               {/* Store Accordion */}
-              <div>
+              <div className="border-b border-gray-200 pb-3">
                 <button
                   onClick={() => setMobileAccordion(mobileAccordion === 'store' ? null : 'store')}
-                  className="w-full text-left py-2 font-medium flex items-center justify-between"
+                  className="w-full text-left py-3 font-semibold text-gray-900 text-base flex items-center justify-between"
                 >
                   Store
                   <ChevronDown
-                    size={16}
+                    size={18}
                     className={`transform transition ${mobileAccordion === 'store' ? 'rotate-180' : ''}`}
                   />
                 </button>
                 {mobileAccordion === 'store' && (
-                  <div className="pl-4 space-y-2 mt-2">
-                    <div className="mb-4">
-                      <p className="font-semibold text-blue-600 mb-2">Shop by Category</p>
+                  <div className="pl-4 space-y-4 mt-3 max-h-96 overflow-y-auto">
+                    <div>
+                      <p className="font-bold text-blue-600 mb-3 text-sm uppercase tracking-wide">Shop by Category</p>
                       {categories.map((category) => (
                         <Link
                           key={category}
                           href={`/category/${category.toLowerCase().replace(/\s+/g, '-')}`}
-                          className="block py-1 text-sm hover:text-blue-600"
+                          className="block py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-2 rounded transition text-sm"
                         >
                           {category}
                         </Link>
                       ))}
                     </div>
-                    <div className="mb-4">
-                      <p className="font-semibold text-blue-600 mb-2">Shop by Brand</p>
+                    <div>
+                      <p className="font-bold text-blue-600 mb-3 text-sm uppercase tracking-wide">Shop by Brand</p>
                       {brands.map((brand) => (
                         <Link
                           key={brand}
                           href={`/brand/${brand.toLowerCase().replace(/\s+/g, '-')}`}
-                          className="block py-1 text-sm hover:text-blue-600"
+                          className="block py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-2 rounded transition text-sm"
                         >
                           {brand}
                         </Link>
                       ))}
                     </div>
                     <div>
-                      <p className="font-semibold text-blue-600 mb-2">Featured</p>
+                      <p className="font-bold text-blue-600 mb-3 text-sm uppercase tracking-wide">Featured</p>
                       {featured.map((item) => (
                         <Link
                           key={item.name}
                           href={item.link}
-                          className="block py-1 text-sm hover:text-blue-600"
+                          className="block py-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 px-2 rounded transition text-sm"
                         >
                           {item.name}
                         </Link>
@@ -192,10 +196,10 @@ export default function Navigation() {
                 )}
               </div>
 
-              <Link href="/about" className="block py-2 hover:text-blue-600">
+              <Link href="/about" className="block py-3 font-medium text-gray-900 hover:text-blue-600 text-base border-b border-gray-200">
                 About
               </Link>
-              <Link href="/contact" className="block py-2 hover:text-blue-600">
+              <Link href="/contact" className="block py-3 font-medium text-gray-900 hover:text-blue-600 text-base">
                 Contact
               </Link>
             </div>

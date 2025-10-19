@@ -8,7 +8,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
+    <header className="md:sticky md:top-0 z-50 bg-white shadow-md">
       {/* Top Bar */}
       <div className="bg-blue-600 text-white py-2">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
