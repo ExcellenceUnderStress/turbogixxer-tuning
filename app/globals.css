@@ -1,13 +1,56 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Core Brand Palette */
+  --primary: #1C6C8C;
+  --secondary: #11768C;
+  --neutral-light: #C5D3D9;
+  --neutral-dark: #0D0D0D;
+  --accent: #80ADBF;
+
+  /* Extended System Colors */
+  --background: #F7F9FA;
+  --card-background: #FFFFFF;
+  --text-primary: #111111;
+  --text-secondary: #4B5563;
+  --success: #1DA1A3;
+  --warning: #F6B73C;
+  --error: #D64545;
+
+  /* Legacy support */
+  --foreground: var(--text-primary);
+
+  /* Gradient Definitions */
+  --gradient-primary: linear-gradient(135deg, #1C6C8C, #11768C);
+  --gradient-metallic: linear-gradient(90deg, #E5E7EB, #C5D3D9, #9CA3AF);
+  --gradient-dark-accent: linear-gradient(135deg, #0D0D0D, #1C6C8C);
+
+  /* Optional High-Contrast Accents (for CTAs or notifications) */
+  --accent-vivid-orange: #FF6F3C;
+  --accent-neon-cyan: #00E0D0;
 }
 
 @theme inline {
+  /* Core Brand Colors */
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-neutral-light: var(--neutral-light);
+  --color-neutral-dark: var(--neutral-dark);
+  --color-accent: var(--accent);
+
+  /* Extended System Colors */
   --color-background: var(--background);
+  --color-card-background: var(--card-background);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-error: var(--error);
+
+  /* Legacy */
   --color-foreground: var(--foreground);
+
+  /* Font families */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -15,12 +58,82 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
+    --card-background: #111111;
+    --text-primary: #ededed;
+    --text-secondary: #C5D3D9;
+    --neutral-light: #1a1a1a;
     --foreground: #ededed;
   }
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
+  color: var(--text-primary);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Utility Classes for Gradients */
+.gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.gradient-metallic {
+  background: var(--gradient-metallic);
+}
+
+.gradient-dark-accent {
+  background: var(--gradient-dark-accent);
+}
+
+/* Button Utility Classes */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary);
+}
+
+.btn-secondary {
+  background-color: var(--accent);
+  color: var(--text-primary);
+  transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--neutral-light);
+}
+
+/* Card Utility Classes */
+.card {
+  background-color: var(--card-background);
+  border: 1px solid var(--neutral-light);
+  border-radius: 0.5rem;
+}
+
+/* Status Colors */
+.text-success {
+  color: var(--success);
+}
+
+.text-warning {
+  color: var(--warning);
+}
+
+.text-error {
+  color: var(--error);
+}
+
+.bg-success {
+  background-color: var(--success);
+}
+
+.bg-warning {
+  background-color: var(--warning);
+}
+
+.bg-error {
+  background-color: var(--error);
 }

@@ -1,6 +1,14 @@
 import Link from 'next/link';
+import { Instagram, Youtube } from 'lucide-react';
 
 export default function Footer() {
+  const platforms = [
+    { name: 'Hondata', logo: '/ktunerlogo.png' },
+    { name: 'Haltech', logo: '/haltechlogo.png' },
+    { name: 'KTuner', logo: '/ktunerlogo.png' },
+    { name: 'MoTeC', logo: '/aemlogo.png' }
+  ];
+
   return (
     <footer className="bg-gray-800 text-white mt-auto">
       <div className="container mx-auto px-4 py-12">
@@ -8,73 +16,77 @@ export default function Footer() {
         <div className="flex items-center gap-3 mb-8">
           <img 
             src="/TTLogo-White@2x.png" 
-            alt="Turbogixxer Tuning Logo" 
+            alt="TurboJixxer Tuning Logo" 
             className="h-12 w-auto"
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Navigation Links */}
-          <div>
-            <h3 className="font-bold text-lg mb-4 text-blue-400">Shop</h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/store" className="hover:text-blue-400 transition">Store</Link></li>
-              <li><Link href="/combo-deals" className="hover:text-blue-400 transition">Combo Deals</Link></li>
-              <li><Link href="/tuning-service" className="hover:text-blue-400 transition">Tuning Services</Link></li>
-              <li><Link href="/used-parts" className="hover:text-blue-400 transition">Used Parts</Link></li>
-            </ul>
-          </div>
+        {/* Contact Info */}
+        <div className="mb-8">
+          <p className="text-gray-300 mb-2">Auburn, WA</p>
+          <p className="text-gray-300">
+            <a href="mailto:info@turbojixxer.com" className="hover:text-blue-400 transition">
+              info@turbojixxer.com
+            </a>
+          </p>
+        </div>
 
-          {/* Information */}
-          <div>
-            <h3 className="font-bold text-lg mb-4 text-blue-400">Information</h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/about" className="hover:text-blue-400 transition">About</Link></li>
-              <li><Link href="/contact" className="hover:text-blue-400 transition">Contact</Link></li>
-              <li><Link href="/tuning-agreement" className="hover:text-blue-400 transition">Tuning Agreement</Link></li>
-              <li><Link href="/privacy-policy" className="hover:text-blue-400 transition">Privacy Policy</Link></li>
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className="font-bold text-lg mb-4 text-blue-400">Legal</h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link href="/payments-shipping" className="hover:text-blue-400 transition">Payments & Shipping</Link></li>
-              <li><Link href="/disclaimer" className="hover:text-blue-400 transition">Disclaimer</Link></li>
-              <li><Link href="/terms" className="hover:text-blue-400 transition">Terms of Service</Link></li>
-            </ul>
-          </div>
-
-          {/* Contact & Social */}
-          <div>
-            <h3 className="font-bold text-lg mb-4 text-blue-400">Connect</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a href="mailto:info@turbogixxer.com" className="hover:text-blue-400 transition">
-                  info@turbogixxer.com
-                </a>
-              </li>
-              <li>
-                <a href="tel:+1234567890" className="hover:text-blue-400 transition">
-                  (123) 456-7890
-                </a>
-              </li>
-            </ul>
-            <div className="flex gap-4 mt-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
-                Facebook
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition">
-                Instagram
-              </a>
-            </div>
+        {/* Platform Logos */}
+        <div className="mb-8">
+          <h3 className="font-bold text-lg mb-4 text-blue-400">Supported Platforms</h3>
+          <div className="flex flex-wrap items-center gap-6">
+            <span className="text-gray-300">Hondata</span>
+            <span className="text-gray-300">Haltech</span>
+            <span className="text-gray-300">KTuner</span>
+            <span className="text-gray-300">MoTeC</span>
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-sm">
-          <p>Copyright © 2013-2025 Turbogixxer Tuning. All rights reserved.</p>
+        {/* Social Media */}
+        <div className="mb-8">
+          <h3 className="font-bold text-lg mb-4 text-blue-400">Follow Us</h3>
+          <div className="flex gap-4">
+            <a 
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center gap-2 hover:text-blue-400 transition"
+            >
+              <Instagram size={20} />
+              <span>Instagram</span>
+            </a>
+            <a 
+              href="https://youtube.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="flex items-center gap-2 hover:text-blue-400 transition"
+            >
+              <Youtube size={20} />
+              <span>YouTube</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Copyright and Links */}
+        <div className="border-t border-gray-700 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-gray-400 text-sm">
+              Copyright © 2013-2025 TurboJixxer Tuning. All rights reserved.
+            </p>
+            <div className="flex gap-4 text-sm">
+              <Link href="#" className="text-gray-400 hover:text-blue-400 transition">
+                Terms
+              </Link>
+              <span className="text-gray-600">|</span>
+              <Link href="#" className="text-gray-400 hover:text-blue-400 transition">
+                Refund Policy
+              </Link>
+              <span className="text-gray-600">|</span>
+              <Link href="/merch" className="text-gray-400 hover:text-blue-400 transition">
+                Merch Policy
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

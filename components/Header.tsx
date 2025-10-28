@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { ShoppingCart, User, Heart, Search, Menu, X } from 'lucide-react';
+import { ShoppingCart, Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -38,28 +38,27 @@ export default function Header() {
             />
           </Link>
 
-          {/* Desktop Search */}
-          <div className="hidden md:flex flex-1 max-w-xl mx-8">
-            <div className="relative w-full">
-              <input
-                type="text"
-                placeholder="Search products..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <Search className="absolute right-3 top-2.5 text-gray-400" size={20} />
-            </div>
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex flex-1 items-center justify-center gap-8 mx-8">
+            <Link href="/" className="text-gray-700 hover:text-blue-600 transition font-medium">
+              Home
+            </Link>
+            <Link href="/about" className="text-gray-700 hover:text-blue-600 transition font-medium">
+              About
+            </Link>
+            <Link href="/schedule" className="text-gray-700 hover:text-blue-600 transition font-medium">
+              Schedule
+            </Link>
+            <Link href="/merch" className="text-gray-700 hover:text-blue-600 transition font-medium">
+              Merch
+            </Link>
+            <Link href="/faq" className="text-gray-700 hover:text-blue-600 transition font-medium">
+              FAQ
+            </Link>
           </div>
 
-          {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-6">
-            <Link href="/account" className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition">
-              <User size={20} />
-              <span className="text-sm">Account</span>
-            </Link>
-            <Link href="/wishlist" className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition">
-              <Heart size={20} />
-              <span className="text-sm">Wishlist</span>
-            </Link>
+          {/* Cart */}
+          <div className="hidden md:flex items-center">
             <Link href="/cart" className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition relative">
               <ShoppingCart size={20} />
               <span className="text-sm">Cart</span>
@@ -78,35 +77,33 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Search */}
-        <div className="md:hidden mt-4">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search products..."
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            <Search className="absolute right-3 top-2.5 text-gray-400" size={20} />
-          </div>
-        </div>
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-t">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
-            <Link href="/account" className="flex items-center gap-2 hover:text-blue-600 transition">
-              <User size={20} />
-              <span>Account</span>
+            <Link href="/" className="py-2 font-medium text-gray-900 hover:text-blue-600 border-b border-gray-200" onClick={() => setMobileMenuOpen(false)}>
+              Home
             </Link>
-            <Link href="/wishlist" className="flex items-center gap-2 hover:text-blue-600 transition">
-              <Heart size={20} />
-              <span>Wishlist</span>
+            <Link href="/about" className="py-2 font-medium text-gray-900 hover:text-blue-600 border-b border-gray-200" onClick={() => setMobileMenuOpen(false)}>
+              About
             </Link>
-            <Link href="/cart" className="flex items-center gap-2 hover:text-blue-600 transition">
-              <ShoppingCart size={20} />
-              <span>Cart (0)</span>
+            <Link href="/schedule" className="py-2 font-medium text-gray-900 hover:text-blue-600 border-b border-gray-200" onClick={() => setMobileMenuOpen(false)}>
+              Schedule
             </Link>
+            <Link href="/merch" className="py-2 font-medium text-gray-900 hover:text-blue-600 border-b border-gray-200" onClick={() => setMobileMenuOpen(false)}>
+              Merch
+            </Link>
+            <Link href="/faq" className="py-2 font-medium text-gray-900 hover:text-blue-600 border-b border-gray-200" onClick={() => setMobileMenuOpen(false)}>
+              FAQ
+            </Link>
+            <div className="pt-4 border-t border-gray-200">
+              <Link href="/cart" className="flex items-center gap-2 hover:text-blue-600 transition" onClick={() => setMobileMenuOpen(false)}>
+                <ShoppingCart size={20} />
+                <span>Cart (0)</span>
+              </Link>
+            </div>
           </div>
         </div>
       )}
