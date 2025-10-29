@@ -195,6 +195,15 @@ export default function Home() {
           </div>
         </div>
       </section>
+ {/* Section 10: Final Callout Banner */}
+      <section className="py-16 bg-teal-600">
+        <div className="container mx-auto px-8 max-w-[1280px] flex flex-col md:flex-row items-center justify-between gap-8">
+          <h2 className="text-white text-3xl font-semibold">Ready to see what your setup can really do?</h2>
+          <Link href="/schedule" className="px-8 py-4 bg-white hover:bg-gray-100 text-teal-600 rounded-lg font-bold transition whitespace-nowrap">
+            Book Your Tune
+          </Link>
+        </div>
+      </section>
 
       {/* Section 6: Merch Feature */}
       <section className="py-24 bg-[#101518]">
@@ -305,16 +314,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 10: Final Callout Banner */}
-      <section className="py-16 bg-teal-600">
-        <div className="container mx-auto px-8 max-w-[1280px] flex flex-col md:flex-row items-center justify-between gap-8">
-          <h2 className="text-white text-3xl font-semibold">Ready to see what your setup can really do?</h2>
-          <Link href="/schedule" className="px-8 py-4 bg-white hover:bg-gray-100 text-teal-600 rounded-lg font-bold transition whitespace-nowrap">
-            Book Your Tune
-          </Link>
-        </div>
-      </section>
-
+    
       {/* Section 11: Final Booking Banner / Footer CTA */}
       <section className="py-24 bg-gray-700">
         <div className="container mx-auto px-8 max-w-[1280px]">
