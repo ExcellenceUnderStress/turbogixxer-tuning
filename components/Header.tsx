@@ -2,106 +2,109 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { ShoppingCart, Menu, X } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="md:sticky md:top-0 z-50 bg-white shadow-md">
-      {/* Top Bar */}
-      <div className="bg-blue-600 text-white py-2">
-        <div className="container mx-auto px-4 flex justify-between items-center text-sm">
-          <div className="flex items-center gap-4">
-            <span>Expert ECU Tuning & Performance Parts</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-200 transition">
-              Facebook
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-200 transition">
-              Instagram
-            </a>
-          </div>
-        </div>
-      </div>
+    <header className="relative h-20 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+      <div className="w-full h-20 flex flex-col justify-center items-center">
+        <div className="w-full max-w-[1280px] px-8 flex justify-between items-center">
+          {/* Left Content - Logo and Navigation */}
+          <div className="flex justify-start items-center gap-8">
+            {/* Logo */}
+            <Link href="/" className="w-36 flex justify-start items-start">
+              <div className="w-36 h-8 relative">
+                <img 
+                  src="/TTLogo-White.svg" 
+                  alt="TurboJixxer Tuning" 
+                  className="h-8 w-auto"
+                />
+              </div>
+            </Link>
 
-      {/* Main Header */}
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center hover:opacity-80 transition">
-            <img 
-              src="/TTLogo.png" 
-              alt="Turbogixxer Tuning Logo" 
-              className="h-10 w-auto"
-            />
-          </Link>
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex justify-start items-center gap-5">
+              {/* Schedule Link */}
+              <Link href="/schedule" className="flex justify-center items-center gap-1 overflow-hidden">
+                <span className="text-white text-base font-semibold leading-6">Schedule</span>
+              </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex flex-1 items-center justify-center gap-8 mx-8">
-            <Link href="/" className="text-gray-700 hover:text-blue-600 transition font-medium">
-              Home
-            </Link>
-            <Link href="/about" className="text-gray-700 hover:text-blue-600 transition font-medium">
-              About
-            </Link>
-            <Link href="/schedule" className="text-gray-700 hover:text-blue-600 transition font-medium">
-              Schedule
-            </Link>
-            <Link href="/merch" className="text-gray-700 hover:text-blue-600 transition font-medium">
-              Merch
-            </Link>
-            <Link href="/faq" className="text-gray-700 hover:text-blue-600 transition font-medium">
-              FAQ
-            </Link>
+              {/* FAQ Link */}
+              <Link href="/faq" className="flex justify-center items-center gap-1 overflow-hidden">
+                <span className="text-white text-base font-semibold leading-6">FAQ</span>
+              </Link>
+
+              {/* Shop Link */}
+              <Link href="/merch" className="flex justify-center items-center gap-1 overflow-hidden">
+                <span className="text-white text-base font-semibold leading-6">Shop</span>
+              </Link>
+
+              {/* About/Gallery Link */}
+              <Link href="/about" className="flex justify-center items-center gap-1 overflow-hidden">
+                <span className="text-white text-base font-semibold leading-6">About/Gallery</span>
+              </Link>
+            </nav>
           </div>
 
-          {/* Cart */}
-          <div className="hidden md:flex items-center">
-            <Link href="/cart" className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition relative">
-              <ShoppingCart size={20} />
-              <span className="text-sm">Cart</span>
-              <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                0
-              </span>
+          {/* Right Content - Action Buttons */}
+          <div className="hidden md:flex justify-start items-center gap-3">
+            {/* Log in Button */}
+            <Link
+              href="/schedule"
+              className="px-4 py-2.5 bg-gray-600 hover:bg-gray-500 rounded-lg shadow-sm border border-white/10 flex justify-center items-center gap-1.5 overflow-hidden transition"
+            >
+              <div className="px-0.5 flex justify-center items-center">
+                <span className="text-white text-base font-semibold leading-6">Log in</span>
+              </div>
+            </Link>
+
+            {/* Sign up Button */}
+            <Link
+              href="/schedule"
+              className="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm border-2 border-white/10 flex justify-center items-center gap-1.5 overflow-hidden transition"
+            >
+              <div className="px-0.5 flex justify-center items-center">
+                <span className="text-white text-base font-semibold leading-6">Sign up</span>
+              </div>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="md:hidden text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </button>
         </div>
-
       </div>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t">
+        <div className="md:hidden absolute top-20 left-0 right-0 bg-gray-900 border-t border-gray-700 z-50">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
-            <Link href="/" className="py-2 font-medium text-gray-900 hover:text-blue-600 border-b border-gray-200" onClick={() => setMobileMenuOpen(false)}>
-              Home
-            </Link>
-            <Link href="/about" className="py-2 font-medium text-gray-900 hover:text-blue-600 border-b border-gray-200" onClick={() => setMobileMenuOpen(false)}>
-              About
-            </Link>
-            <Link href="/schedule" className="py-2 font-medium text-gray-900 hover:text-blue-600 border-b border-gray-200" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/schedule" className="py-2 font-semibold text-white hover:text-blue-400 border-b border-gray-700" onClick={() => setMobileMenuOpen(false)}>
               Schedule
             </Link>
-            <Link href="/merch" className="py-2 font-medium text-gray-900 hover:text-blue-600 border-b border-gray-200" onClick={() => setMobileMenuOpen(false)}>
-              Merch
-            </Link>
-            <Link href="/faq" className="py-2 font-medium text-gray-900 hover:text-blue-600 border-b border-gray-200" onClick={() => setMobileMenuOpen(false)}>
+            <Link href="/faq" className="py-2 font-semibold text-white hover:text-blue-400 border-b border-gray-700" onClick={() => setMobileMenuOpen(false)}>
               FAQ
             </Link>
-            <div className="pt-4 border-t border-gray-200">
-              <Link href="/cart" className="flex items-center gap-2 hover:text-blue-600 transition" onClick={() => setMobileMenuOpen(false)}>
-                <ShoppingCart size={20} />
-                <span>Cart (0)</span>
+            <Link href="/merch" className="py-2 font-semibold text-white hover:text-blue-400 border-b border-gray-700" onClick={() => setMobileMenuOpen(false)}>
+              Shop
+            </Link>
+            <Link href="/about" className="py-2 font-semibold text-white hover:text-blue-400 border-b border-gray-700" onClick={() => setMobileMenuOpen(false)}>
+              About/Gallery
+            </Link>
+            <div className="pt-4 border-t border-gray-700 flex flex-col gap-3">
+              <Link href="/schedule" className="px-4 py-2.5 bg-gray-600 rounded-lg text-center text-white font-semibold" onClick={() => setMobileMenuOpen(false)}>
+                Log in
+              </Link>
+              <Link href="/schedule" className="px-4 py-2.5 bg-blue-600 rounded-lg text-center text-white font-semibold" onClick={() => setMobileMenuOpen(false)}>
+                Sign up
               </Link>
             </div>
           </div>
