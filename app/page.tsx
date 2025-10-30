@@ -31,7 +31,7 @@ export default function Home() {
                 href="/merch"
                 className="px-5 py-4 bg-gray-600 hover:bg-gray-500 rounded-[10px] shadow-sm border border-white/10 flex justify-center items-center gap-2 overflow-hidden transition"
               >
-                <span className="text-white text-lg font-semibold leading-7">Shop TurboJixxer Gear</span>
+                <span className="text-white text-lg font-semibold leading-7">Shop Turbogixxer Gear</span>
               </Link>
             </div>
             <p className="text-sm text-gray-400">
@@ -89,7 +89,7 @@ export default function Home() {
           
           <div className="grid md:grid-cols-4 gap-6">
             <div className="bg-gray-800 p-6 rounded-lg">
-              <img src="/hondatalogo.png" alt="Hondata / KTuner" className="h-12 mb-4" />
+              <img src="/ktunerlogo.png" alt="KTuner" className="h-12 mb-4" />
               <h3 className="text-white font-semibold mb-2">Hondata / KTuner</h3>
               <p className="text-gray-400 text-sm mb-4">Honda/Acura platform tuning</p>
               <Link href="/schedule" className="text-blue-400 hover:text-blue-300 text-sm font-semibold">Book Session →</Link>
@@ -101,13 +101,13 @@ export default function Home() {
               <Link href="/schedule" className="text-blue-400 hover:text-blue-300 text-sm font-semibold">Book Session →</Link>
             </div>
             <div className="bg-gray-800 p-6 rounded-lg">
-              <img src="/moteclogo.png" alt="MoTeC" className="h-12 mb-4" />
-              <h3 className="text-white font-semibold mb-2">MoTeC</h3>
+              <img src="/aemlogo.png" alt="AEM" className="h-12 mb-4" />
+              <h3 className="text-white font-semibold mb-2">MoTeC / AEM</h3>
               <p className="text-gray-400 text-sm mb-4">Professional race systems</p>
               <Link href="/schedule" className="text-blue-400 hover:text-blue-300 text-sm font-semibold">Book Session →</Link>
             </div>
             <div className="bg-gray-800 p-6 rounded-lg">
-              <h3 className="text-white font-semibold mb-2">Dyno Rental</h3>
+              <h3 className="text-white font-semibold mb-2 mt-12">Dyno Rental</h3>
               <p className="text-gray-400 text-sm mb-4">Self-service dyno time</p>
               <Link href="/schedule" className="text-blue-400 hover:text-blue-300 text-sm font-semibold">Book Session →</Link>
             </div>
@@ -209,14 +209,14 @@ export default function Home() {
       <section className="py-24 bg-[#101518]">
         <div className="container mx-auto px-8 max-w-[1280px]">
           <h2 className="text-white text-4xl font-semibold mb-4 text-center">Built. Tested. Represented.</h2>
-          <p className="text-gray-400 text-xl text-center mb-12">TurboJixxer gear reflects the same standard as the cars that wear the sticker—clean, functional, and earned.</p>
+          <p className="text-gray-400 text-xl text-center mb-12">Turbogixxer gear reflects the same standard as the cars that wear the sticker—clean, functional, and earned.</p>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             <div className="bg-gray-800 rounded-lg overflow-hidden hover:ring-2 hover:ring-teal-500 transition">
               <div className="aspect-square bg-gray-700 flex items-center justify-center text-gray-500">
                 [Product Photo]
               </div>
               <div className="p-6">
-                <h3 className="text-white font-semibold mb-2">TurboJixxer Tee</h3>
+                <h3 className="text-white font-semibold mb-2">Turbogixxer Tee</h3>
                 <p className="text-gray-400 text-sm mb-4">Premium cotton, clean design</p>
                 <p className="text-teal-400 font-bold">$35</p>
               </div>
@@ -244,7 +244,7 @@ export default function Home() {
           </div>
           <div className="text-center">
             <Link href="/merch" className="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-semibold transition inline-block">
-              Shop TurboJixxer Gear
+              Shop Turbogixxer Gear
             </Link>
           </div>
         </div>
@@ -277,10 +277,10 @@ export default function Home() {
             <div>
               <h2 className="text-white text-4xl font-semibold mb-6">Built by a Tuner, Not a Brand.</h2>
               <p className="text-gray-300 mb-6">
-                TurboJixxer Tuning is a one-person operation focused on precision ECU calibration for Honda/Acura platforms and standalone systems. Every tune is done personally, with full transparency on the process and results.
+                Turbogixxer Tuning is a one-person operation focused on precision ECU calibration for Honda/Acura platforms and standalone systems. Every tune is done personally, with full transparency on the process and results.
               </p>
               <p className="text-gray-400 mb-8">
-                Based in [City]. Supporting Hondata, Haltech, KTuner, and MoTeC platforms.
+                Based in Auburn, WA. Supporting Hondata, Haltech, KTuner, and MoTeC platforms.
               </p>
               <Link href="/about" className="px-6 py-3 bg-gray-600 hover:bg-gray-500 rounded-lg text-white font-semibold transition inline-block">
                 Learn More

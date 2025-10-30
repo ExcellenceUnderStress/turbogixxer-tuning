@@ -50,23 +50,13 @@ export default function Header() {
 
           {/* Right Content - Action Buttons */}
           <div className="hidden md:flex justify-start items-center gap-3">
-            {/* Log in Button */}
+            {/* Contact Button */}
             <Link
-              href="/schedule"
-              className="px-4 py-2.5 bg-gray-600 hover:bg-gray-500 rounded-lg shadow-sm border border-white/10 flex justify-center items-center gap-1.5 overflow-hidden transition"
-            >
-              <div className="px-0.5 flex justify-center items-center">
-                <span className="text-white text-base font-semibold leading-6">Log in</span>
-              </div>
-            </Link>
-
-            {/* Sign up Button */}
-            <Link
-              href="/schedule"
+              href="/contact"
               className="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg shadow-sm border-2 border-white/10 flex justify-center items-center gap-1.5 overflow-hidden transition"
             >
               <div className="px-0.5 flex justify-center items-center">
-                <span className="text-white text-base font-semibold leading-6">Sign up</span>
+                <span className="text-white text-base font-semibold leading-6">Contact</span>
               </div>
             </Link>
           </div>
@@ -100,11 +90,8 @@ export default function Header() {
               About/Gallery
             </Link>
             <div className="pt-4 border-t border-gray-700 flex flex-col gap-3">
-              <Link href="/schedule" className="px-4 py-2.5 bg-gray-600 rounded-lg text-center text-white font-semibold" onClick={() => setMobileMenuOpen(false)}>
-                Log in
-              </Link>
-              <Link href="/schedule" className="px-4 py-2.5 bg-blue-600 rounded-lg text-center text-white font-semibold" onClick={() => setMobileMenuOpen(false)}>
-                Sign up
+              <Link href="/contact" className="px-4 py-2.5 bg-blue-600 rounded-lg text-center text-white font-semibold" onClick={() => setMobileMenuOpen(false)}>
+                Contact
               </Link>
             </div>
           </div>
