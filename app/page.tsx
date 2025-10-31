@@ -1,58 +1,45 @@
 'use client';
 
 import Link from 'next/link';
+import PixelBlast from '@/components/PixelBlast';
 
 export default function Home() {
   return (
     <div>
-      {/* Section 1: Hero */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white pt-16 pb-24 flex justify-center items-center gap-8">
-        <div className="flex-1 max-w-[1280px] px-8 flex justify-center items-center gap-16">
-          {/* Content */}
-          <div className="flex-1 inline-flex flex-col justify-start items-start gap-12">
-            <div className="self-stretch flex flex-col justify-start items-start gap-6">
-              <div className="self-stretch flex flex-col justify-start items-start gap-3">
-                <h1 className="self-stretch text-white text-6xl font-semibold leading-[72px]">
-                  Numbers Don&apos;t Lie. Neither Do Our Tunes.
-                </h1>
-              </div>
-              <p className="w-full max-w-[480px] text-gray-300 text-xl font-normal leading-8">
-                Real-world drivability and consistent power for street, track, and competition setups.
-              </p>
-            </div>
-            <div className="inline-flex justify-start items-start gap-3">
-              <Link
-                href="/schedule"
-                className="px-5 py-4 bg-blue-600 hover:bg-blue-700 rounded-[10px] shadow-sm border-2 border-white/10 flex justify-center items-center gap-2 overflow-hidden transition"
-              >
-                <span className="text-white text-lg font-semibold leading-7">Schedule Your Tune</span>
-              </Link>
-              <Link
-                href="/merch"
-                className="px-5 py-4 bg-gray-600 hover:bg-gray-500 rounded-[10px] shadow-sm border border-white/10 flex justify-center items-center gap-2 overflow-hidden transition"
-              >
-                <span className="text-white text-lg font-semibold leading-7">Shop Turbogixxer Gear</span>
-              </Link>
-            </div>
-            <p className="text-sm text-gray-400">
-              MoTeC / Haltech / Hondata / KTuner Supported
+      {/* Section 1: Hero with PixelBlast Background */}
+      <section className="relative w-full h-screen overflow-hidden bg-black -mt-20">
+        <PixelBlast
+          variant="square"
+          pixelSize={4}
+          color="#009dd1"
+          patternScale={2.75}
+          patternDensity={0.75}
+          liquid={false}
+          liquidStrength={0}
+          liquidRadius={0}
+          pixelSizeJitter={0}
+          enableRipples={true}
+          rippleIntensityScale={1}
+          rippleThickness={0.1}
+          rippleSpeed={0.3}
+          liquidWobbleSpeed={0}
+          autoPauseOffscreen={false}
+          speed={0.5}
+          transparent={true}
+          edgeFade={0.2}
+          noiseAmount={0}
+          className="absolute inset-0 w-full h-full"
+        />
+        
+        {/* Hero Text Overlay */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="text-center px-8 py-12 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl max-w-4xl mx-4 pointer-events-auto">
+            <h1 className="text-white text-6xl md:text-7xl font-bold mb-6 tracking-tight">
+              turbogixxer tuning
+            </h1>
+            <p className="text-white/90 text-xl md:text-2xl font-light leading-relaxed">
+              Professional engine management calibration for high performance street and track builds.
             </p>
-          </div>
-
-          {/* Visual Content */}
-          <div className="flex-1 h-[560px] relative">
-            {/* Placeholder for dyno photo with overlay */}
-            <div className="absolute inset-0 bg-gray-700 rounded-lg overflow-hidden">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-500">
-                [Dyno Pull Photo]
-              </div>
-              
-              {/* Overlay tag */}
-              <div className="absolute top-4 right-4 bg-blue-600 text-white px-6 py-4 rounded-lg shadow-lg">
-                <div className="text-2xl font-bold">421 WHP / 288 WTQ</div>
-                <div className="text-sm text-blue-100">Verified on Mustang Dyno</div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
