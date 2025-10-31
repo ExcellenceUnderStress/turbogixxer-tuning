@@ -204,7 +204,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
-
+ 
       {/* Section 6: Merch Feature */}
       <section className="py-24 bg-[#101518]">
         <div className="container mx-auto px-8 max-w-[1280px]">
