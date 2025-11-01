@@ -1,14 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import PixelBlast from '@/components/PixelBlast';
+import LetterGlitch from '@/components/LetterGlitch';
+import MerchSection from '@/components/MerchSection';
 
 export default function Home() {
   return (
     <div>
-      {/* Section 1: Hero with PixelBlast Background */}
+      {/* Section 1: Hero with LetterGlitch Background */}
       <section className="relative w-full h-screen overflow-hidden bg-black -mt-20">
-        <PixelBlast
+        <LetterGlitch
           variant="square"
           pixelSize={4}
           color="#009dd1"
@@ -24,6 +25,7 @@ export default function Home() {
           rippleSpeed={0.3}
           liquidWobbleSpeed={0}
           autoPauseOffscreen={false}
+          centerVignette={true}
           speed={0.5}
           transparent={true}
           edgeFade={0.2}
@@ -33,17 +35,16 @@ export default function Home() {
         
         {/* Hero Text Overlay */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="text-center px-8 py-12 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 shadow-2xl max-w-4xl mx-4 pointer-events-auto">
-            <h1 className="text-white text-6xl md:text-7xl font-bold mb-6 tracking-tight">
-              turbogixxer tuning
-            </h1>
-            <p className="text-white/90 text-xl md:text-2xl font-light leading-relaxed">
-              Professional engine management calibration for high performance street and track builds.
-            </p>
-          </div>
+            <div className="text-center px-8 py-12">
+              <h1 className="text-white text-6xl md:text-7xl font-bold mb-6 tracking-tight">
+                turbogixxer tuning
+              </h1>
+              <p className="text-white/90 text-xl md:text-2xl font-light leading-relaxed">
+                Professional engine management calibration for high performance street and track builds.
+              </p>
         </div>
-      </section>
-
+        </div>
+</section>
       {/* Section 2: Why It Matters */}
       <section className="py-24 bg-[#101518]">
         <div className="container mx-auto px-8 max-w-[1280px]">
@@ -67,41 +68,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Section 3: Services Overview */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
-        <div className="container mx-auto px-8 max-w-[1280px]">
-          <h2 className="text-white text-4xl font-semibold mb-4 text-center">Professional ECU Tuning Services</h2>
-          <p className="text-gray-300 text-xl text-center mb-12">Full dyno calibration, street verification, and remote tuning options.</p>
-          
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="bg-gray-800 p-6 rounded-lg">
-              <img src="/ktunerlogo.png" alt="KTuner" className="h-12 mb-4" />
-              <h3 className="text-white font-semibold mb-2">Hondata / KTuner</h3>
-              <p className="text-gray-400 text-sm mb-4">Honda/Acura platform tuning</p>
-              <Link href="/schedule" className="text-blue-400 hover:text-blue-300 text-sm font-semibold">Book Session →</Link>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-lg">
-              <img src="/haltechlogo.png" alt="Haltech" className="h-12 mb-4" />
-              <h3 className="text-white font-semibold mb-2">Haltech</h3>
-              <p className="text-gray-400 text-sm mb-4">Standalone ECU calibration</p>
-              <Link href="/schedule" className="text-blue-400 hover:text-blue-300 text-sm font-semibold">Book Session →</Link>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-lg">
-              <img src="/aemlogo.png" alt="AEM" className="h-12 mb-4" />
-              <h3 className="text-white font-semibold mb-2">MoTeC / AEM</h3>
-              <p className="text-gray-400 text-sm mb-4">Professional race systems</p>
-              <Link href="/schedule" className="text-blue-400 hover:text-blue-300 text-sm font-semibold">Book Session →</Link>
-            </div>
-            <div className="bg-gray-800 p-6 rounded-lg">
-              <h3 className="text-white font-semibold mb-2 mt-12">Dyno Rental</h3>
-              <p className="text-gray-400 text-sm mb-4">Self-service dyno time</p>
-              <Link href="/schedule" className="text-blue-400 hover:text-blue-300 text-sm font-semibold">Book Session →</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Section 4: Featured Results */}
       <section className="py-24 bg-[#101518]">
         <div className="container mx-auto px-8 max-w-[1280px]">
@@ -193,49 +159,25 @@ export default function Home() {
       </section>
  
       {/* Section 6: Merch Feature */}
-      <section className="py-24 bg-[#101518]">
-        <div className="container mx-auto px-8 max-w-[1280px]">
-          <h2 className="text-white text-4xl font-semibold mb-4 text-center">Built. Tested. Represented.</h2>
-          <p className="text-gray-400 text-xl text-center mb-12">Turbogixxer gear reflects the same standard as the cars that wear the sticker—clean, functional, and earned.</p>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-gray-800 rounded-lg overflow-hidden hover:ring-2 hover:ring-teal-500 transition">
-              <div className="aspect-square bg-gray-700 flex items-center justify-center text-gray-500">
-                [Product Photo]
-              </div>
-              <div className="p-6">
-                <h3 className="text-white font-semibold mb-2">Turbogixxer Tee</h3>
-                <p className="text-gray-400 text-sm mb-4">Premium cotton, clean design</p>
-                <p className="text-teal-400 font-bold">$35</p>
-              </div>
-            </div>
-            <div className="bg-gray-800 rounded-lg overflow-hidden hover:ring-2 hover:ring-teal-500 transition">
-              <div className="aspect-square bg-gray-700 flex items-center justify-center text-gray-500">
-                [Product Photo]
-              </div>
-              <div className="p-6">
-                <h3 className="text-white font-semibold mb-2">Data-Driven Hoodie</h3>
-                <p className="text-gray-400 text-sm mb-4">Heavyweight fleece</p>
-                <p className="text-teal-400 font-bold">$65</p>
-              </div>
-            </div>
-            <div className="bg-gray-800 rounded-lg overflow-hidden hover:ring-2 hover:ring-teal-500 transition">
-              <div className="aspect-square bg-gray-700 flex items-center justify-center text-gray-500">
-                [Product Photo]
-              </div>
-              <div className="p-6">
-                <h3 className="text-white font-semibold mb-2">Dyno Chart Sticker</h3>
-                <p className="text-gray-400 text-sm mb-4">Weatherproof vinyl</p>
-                <p className="text-teal-400 font-bold">$8</p>
-              </div>
-            </div>
-          </div>
-          <div className="text-center">
-            <Link href="/merch" className="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-semibold transition inline-block">
-              Shop Turbogixxer Gear
-            </Link>
-          </div>
-        </div>
-      </section>
+      <MerchSection
+        products={[
+          {
+            name: 'Turbogixxer Tee',
+            description: 'Premium cotton, clean design',
+            price: 35
+          },
+          {
+            name: 'Data-Driven Hoodie',
+            description: 'Heavyweight fleece',
+            price: 65
+          },
+          {
+            name: 'Dyno Chart Sticker',
+            description: 'Weatherproof vinyl',
+            price: 8
+          }
+        ]}
+      />
 
       {/* Section 7: Testimonials */}
       <section className="py-24 bg-gradient-to-br from-gray-900 via-gray-800 to-black">
@@ -319,24 +261,6 @@ export default function Home() {
                 >
                   <span className="text-blue-100 text-base font-semibold leading-6">Check Availability</span>
                 </Link>
-              </div>
-            </div>
-
-            {/* Logos wrap */}
-            <div className="flex-1 flex justify-center items-start gap-8 flex-wrap content-start">
-              {/* AEM Logo */}
-              <div className="flex justify-start items-start gap-2 opacity-80">
-                <img src="/aemlogo.png" alt="AEM" className="h-10 w-auto" />
-              </div>
-              
-              {/* Haltech Logo */}
-              <div className="flex justify-start items-start gap-2 opacity-80">
-                <img src="/haltechlogo.png" alt="Haltech" className="h-10 w-auto" />
-              </div>
-              
-              {/* KTuner Logo */}
-              <div className="flex justify-start items-start gap-2 opacity-80">
-                <img src="/ktunerlogo.png" alt="KTuner" className="h-10 w-auto" />
               </div>
             </div>
           </div>

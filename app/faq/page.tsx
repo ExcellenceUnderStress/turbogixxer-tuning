@@ -1,12 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { ChevronDown, ChevronUp, Calendar } from 'lucide-react';
-import { useState } from 'react';
+import { FAQCategory } from '@/components/FAQCategory';
+import HeaderSection from '@/components/HeaderSection';
 
 export default function FAQPage() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
   const faqs = [
     {
       category: 'Getting Started',
@@ -101,101 +99,36 @@ export default function FAQPage() {
   ];
 
   return (
-    <div>
-      {/* Hero Section - More spacious */}
-      <section className="bg-gradient-to-r from-gray-900 to-gray-800 py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-6xl font-bold mb-6 text-white">Frequently Asked Questions</h1>
-            <p className="text-2xl text-gray-200 leading-relaxed">
-              Everything you need to know about our tuning services, policies, and procedures.
+    <div className="min-h-screen bg-gray-900 py-12">
+      <HeaderSection />
+      <div className="container mx-auto px-4 max-w-4xl">
+        <h1 className="text-4xl font-bold text-white mb-8 text-center">Frequently Asked Questions</h1>
+        
+        <div className="bg-gray-800 rounded-lg shadow-md p-8">
+          {faqs.map((category, categoryIndex) => (
+            <FAQCategory
+              key={categoryIndex}
+              category={category.category}
+              icon={category.icon}
+              questions={category.questions}
+              categoryIndex={categoryIndex}
+            />
+          ))}
+
+          <div className="mt-8 pt-8 border-t border-gray-700">
+            <h2 className="text-xl font-semibold text-white mb-4">Still Have Questions?</h2>
+            <p className="text-gray-300 mb-4">
+              Can&apos;t find what you&apos;re looking for? Our team is here to help answer any questions you might have.
             </p>
+            <Link
+              href="/contact"
+              className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition duration-200"
+            >
+              Contact Us
+            </Link>
           </div>
         </div>
-      </section>
-
-      {/* FAQ Content - More visual with icons and better spacing */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            {faqs.map((category, categoryIndex) => (
-              <div key={categoryIndex} className="mb-16 last:mb-0">
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="text-5xl">{category.icon}</span>
-                  <h2 className="text-4xl font-bold text-gray-900">{category.category}</h2>
-                </div>
-                <div className="space-y-4">
-                  {category.questions.map((faq, faqIndex) => {
-                    const globalIndex = categoryIndex * 100 + faqIndex;
-                    const isOpen = openIndex === globalIndex;
-                    
-                    return (
-                      <div key={faqIndex} className="border border-gray-200 rounded-xl overflow-hidden hover:border-blue-300 transition">
-                        <button
-                          onClick={() => setOpenIndex(isOpen ? null : globalIndex)}
-                          className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-50 transition"
-                        >
-                          <span className="font-semibold text-lg text-gray-900 pr-8">{faq.q}</span>
-                          {isOpen ? (
-                            <ChevronUp className="text-blue-600 flex-shrink-0" size={24} />
-                          ) : (
-                            <ChevronDown className="text-gray-400 flex-shrink-0" size={24} />
-                          )}
-                        </button>
-                        {isOpen && (
-                          <div className="px-8 pb-6 text-gray-700 leading-relaxed text-lg">
-                            {faq.a}
-                          </div>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Visual CTA Section with more spacing */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-3xl shadow-2xl p-12 text-center">
-              <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-4xl">💬</span>
-              </div>
-              <h2 className="text-4xl font-bold mb-4 text-gray-900">Still Have Questions?</h2>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Can&apos;t find what you&apos;re looking for? Our team is here to help answer any questions you might have.
-              </p>
-              <Link
-                href="/schedule"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-xl font-semibold transition inline-flex items-center gap-3 text-lg shadow-lg hover:shadow-xl"
-              >
-                <Calendar size={24} />
-                Schedule Now
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bottom CTA */}
-      <section className="py-24 bg-gradient-to-r from-blue-600 to-blue-700">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-white">Ready to Get Started?</h2>
-          <p className="text-2xl mb-10 text-blue-100 max-w-2xl mx-auto leading-relaxed">
-            Book your dyno session or remote tune today and join hundreds of satisfied customers.
-          </p>
-          <Link
-            href="/schedule"
-            className="bg-white text-blue-600 hover:bg-gray-100 px-10 py-4 rounded-xl font-semibold transition inline-block text-lg shadow-lg hover:shadow-xl"
-          >
-            View Pricing & Schedule
-          </Link>
-        </div>
-      </section>
+      </div>
     </div>
   );
 }

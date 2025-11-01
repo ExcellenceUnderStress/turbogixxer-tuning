@@ -1,0 +1,39 @@
+.headerSection {
+  width: 100%;
+  padding: 80px 20px;
+  background-color: transparent;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.headingAndSupportingText {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.headingAndSubheading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.supportingText {
+  font-size: 1.125rem;
+  color: #9ca3af;
+}
